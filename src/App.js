@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{ useState } from "react";
+import "./App.css";
+import Header from './Component/Header';
+import Search from './Component/Search';
+import MovieData from './Component/MovieData';
+import MovieList from './Component/MovieList';
+import AddMovie from './Component/AddMovie';
 
-function App() {
-  return (
+
+function App(){
+  const [title , setTitle] = useState("");
+  const [rate, setRate] = useState(0);
+  const [Data, setData]=useState(MovieData)
+
+  const handleTitle=(input)=>{
+    setTitle(input)
+  }
+  const handleRate=(input)=>{
+    setRate (input)
+  }
+  const handleData=(input)=>{
+    setData([...Data,input])
+  }
+
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header  text="ANIME MOVIES" />
+      <Search 
+      handleTitle={handleTitle}
+      handleRate={handleRate} />
+      <p className="App-intro">Top Movies</p>
+      <AddMovie handleData={handleData}/>
+      <MovieList Data={Data}
+      title={title}
+      rate={rate}/>
+
     </div>
-  );
+    
+  )
+
 }
 
-export default App;
+export default App
