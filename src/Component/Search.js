@@ -27,6 +27,7 @@ const Search = ({ handleTitle, handleRate }) => {
       />
        <input onChange={handleChange} type="submit" value="SEARCH" /> 
     </form>
+  
   );
 };
 

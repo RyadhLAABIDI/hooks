@@ -20,6 +20,7 @@ const handleSubmit=()=>{
   return (
     <div>
       <>
+     
         <Button className="addMovie" variant="primary" onClick={handleShow}>
           Add Movie
         </Button>

@@ -9,7 +9,7 @@ const MovieCard =({movie})=>{
       <h2 className="title">{movie.title}</h2>
 <div className="MyCard">
 <img
-width={200}
+width={500}
  src={movie.posterUrl} alt="" />
 </div>
 <p>({movie.year})</p>
